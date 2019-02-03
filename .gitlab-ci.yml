@@ -1,0 +1,20 @@
+image: java:8-jdk
+stages:
+  - test
+  - build
+
+cache:
+  paths:
+    - .m2/repository
+    - target
+maven-test:
+ image: maven:3.3.9-jdk-8
+ stage: test
+ script: "mvn test -B"
+maven-build:
+ stage: build
+ image: maven:3.3.9-jdk-8
+ script: "mvn package -U"
+ artifacts:
+    paths:
+        - target/*.jar

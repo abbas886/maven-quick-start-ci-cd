@@ -33,7 +33,7 @@ public class UserServiceTestCase {
 	public static void init()
 	{
 		context = new AnnotationConfigApplicationContext();
-		context.scan("com.cgi");
+		context.scan("com.stackroute");
 		context.refresh();
 		
 		user = (User)context.getBean("user");
@@ -128,7 +128,7 @@ public class UserServiceTestCase {
 	{
 		List<User> userList = userService.get();
 		
-		assertEquals(10, userList.size());
+		assertEquals(4, userList.size());
 		//you should compare fields also...
 		
 		
