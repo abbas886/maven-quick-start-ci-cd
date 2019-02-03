@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class User {
 	
-	private String id;
+	private String id1;
 	private String passowrd;
 	private String name;
 	public String getId() {
